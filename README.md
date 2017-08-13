@@ -1,1 +1,0 @@
-# Rush-Sudoku-42
