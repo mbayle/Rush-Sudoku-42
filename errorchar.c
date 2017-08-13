@@ -6,7 +6,7 @@
 /*   By: gbetting <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/12 21:18:42 by gbetting          #+#    #+#             */
-/*   Updated: 2017/08/13 21:34:23 by gbetting         ###   ########.fr       */
+/*   Updated: 2017/08/13 22:06:50 by gbetting         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,24 @@ int errorchar(char array[9][9])
 			if(!checkcharline(array,cursor_y++))
 				return(0);
 		return (1);
+}
+
+int errorint(int array[9][9])
+{
+	char charray[9][9];
+	int x;
+	int y;
+	while (y <= 8)
+	{
+		charray[y][x] = array[y][x];
+		x++;
+		if (x == 9)
+		{
+			x = 0;
+			y++;
+		}
+	}
+	if(errorchar(charray))
+		return (0);
+	return (1);
 }
